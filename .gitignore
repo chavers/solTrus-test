@@ -1,0 +1,4 @@
+secret.ts
+node_modules
+**.log
+**.lock

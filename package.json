@@ -17,9 +17,22 @@
     "snake-case": "^3.0.4",
     "toml": "^3.0.0"
   },
-  "name": "solTrust-test",
+  "name": "soltrust-test",
   "version": "1.0.0",
   "main": "alice.js",
   "author": "Chavers <rdevers@chavers.org>",
-  "license": "MIT"
+  "license": "MIT",
+  "description": "## init",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chavers/solTrus-test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chavers/solTrus-test/issues"
+  },
+  "homepage": "https://github.com/chavers/solTrus-test#readme"
 }

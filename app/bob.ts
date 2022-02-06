@@ -30,7 +30,8 @@ const bob = async () => {
         require("fs").readFileSync("./first_try.json", "utf8")
     );
     const programId = new PublicKey(secret.PROGRAM_ID);
-    const program = new anchor.Program(idl, programId); const creator = new PublicKey(secret.DEFINFT_PUBLIC_KEY);
+    const program = new anchor.Program(idl, programId); 
+    const creator = new PublicKey(secret.CREATOR_PUBLIC_KEY);
     const TOKEN_METADATA_PROGRAM = new PublicKey('metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s');
     const nft_price = 0.5 * LAMPORTS_PER_SOL;
     console.log("programId: ", programId.toBase58());
@@ -117,7 +118,7 @@ const bob = async () => {
                 nftMetadata: nft_pda,
                 tokenMetadataProgram: TOKEN_METADATA_PROGRAM,
                 creatorA: anchor.web3.Keypair.generate().publicKey,
-                creatorB: new PublicKey("AXJkPgUdLUDDVrQcb36ZbWRKfmxH2EpsWSG3jyBn8krR"),
+                creatorB: anchor.web3.Keypair.generate().publicKey,
                 creatorC: anchor.web3.Keypair.generate().publicKey,
                 creatorD: creator,
                 creatorE: anchor.web3.Keypair.generate().publicKey,

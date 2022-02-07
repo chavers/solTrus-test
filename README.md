@@ -70,3 +70,15 @@ vault_authority_pda:  A339Eg5nRNaPjy2CnQd1FMY2onUy6HyN2GECwNfukwJf
 fiducie_pda:   2asW8EAnf799PuGpHeE2m5JRcqR2bnTqTEshuSRmVjPS
 transaction:  5pZbSLiDTbUzGMhApc1MbHeCLsVofFQrWcgVH5phhnzVXiPHbf9bQrAwerd3qcK6c5f2hVeLE3oSrkKY4Z3giQ1x
 ```
+
+
+list all NFT owned by smart contract
+```bash
+chavers@chavers-desk:~/solana/source/solTrust-test/app$ ts-node alltoken.ts 
+pubkey: 7qUqeJtjjtsiM2oqVpmd2PKphg8heiTkFDkHtsVsxN8C
+mint: Bj1mAV6AYFn2t62hJQfhdmxT7N8MyNEn1YyoPJcgpGwu
+owner: A339Eg5nRNaPjy2CnQd1FMY2onUy6HyN2GECwNfukwJf
+decimals: 0
+amount: 1
+====================
+```

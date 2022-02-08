@@ -24,7 +24,9 @@ import { web3 } from "@project-serum/anchor";
     // info: https://solanacookbook.com/guides/serialization.html#client-account-data-deserialization
 
     const connection = new Connection(clusterApiUrl("devnet"), "confirmed");
+
     const nft_mint = new PublicKey("Bj1mAV6AYFn2t62hJQfhdmxT7N8MyNEn1YyoPJcgpGwu");
+
     const programId = new PublicKey("4cibLYTAbAxpszLU173SAi69x3yo55fy4pn3jxvnTvv4");
     const seed = nft_mint.toString().substring(0, 30);
     const [_fiducie_pda, _fiducie_bump] = await PublicKey.findProgramAddress(
@@ -48,6 +50,7 @@ import { web3 } from "@project-serum/anchor";
             {
                 kind: "struct",
                 fields: [
+                    ["Discriminator",[8]],
                     ["seller_key", [32]],
                     ["seller_ata", [32]],
                     ["nft_price", "u64"],
@@ -70,7 +73,7 @@ import { web3 } from "@project-serum/anchor";
     const _vault_account = accountInfo['vault_account'];
     console.log('seller_key:', bs58.encode(_seller_key));
     console.log('seller_ata', bs58.encode(_seller_ata));
-    console.log('nft_price',_nft_price );
+    console.log('nft_price',parseInt(_nft_price.toString(),10) /  LAMPORTS_PER_SOL );
     console.log('nft_mint', bs58.encode(_nft_mint));
     console.log('vault_account', bs58.encode(_vault_account));
     console.log("====================")

@@ -32,7 +32,7 @@ const alice = async () => {
     const programId = new PublicKey(secret.PROGRAM_ID);
     const program = new anchor.Program(idl, programId);
     const TOKEN_METADATA_PROGRAM = new PublicKey('metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s');
-    const nft_price = 0.5 * LAMPORTS_PER_SOL;
+    const nft_price = 15 * LAMPORTS_PER_SOL;
     console.log("programId: ", programId.toBase58());
 
     console.log("alice: ", alice.publicKey.toBase58());

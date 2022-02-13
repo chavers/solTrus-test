@@ -39,25 +39,53 @@ import { serialize, deserialize, deserializeUnchecked } from 'borsh';
 
 
 
-    const [_cache_back, _cache_back_bump] = await PublicKey.findProgramAddress(
-        [Buffer.from('cacheback')],
-        programId
-    );
-    const [_vault_authority_pda, _vault_authority_bump] = await PublicKey.findProgramAddress(
-        [Buffer.from(utf8.encode("vault_authority"))],
+    const [_cash_back, _cash_back_bump] = await PublicKey.findProgramAddress(
+        [Buffer.from('cashback')],
         programId
     );
 
+    class Assignable {
+        constructor(properties) {
+            Object.keys(properties).map((key) => {
+                return (this[key] = properties[key]);
+            });
+        }
+    }
 
-    const tx = await program.rpc.sharefee(
+    class AccoundData extends Assignable { }
+    const dataSchema = new Map([
+        [
+            AccoundData,
+            {
+                kind: "struct",
+                fields: [
+                    ["Discriminator", [8]],
+                    ["cash_back", [32]],
+                ]
+            }
+        ]
+    ]);
+
+
+    let nameAccount = await connection.getAccountInfo(_cash_back);
+
+    try {
+        let accountInfo = deserializeUnchecked(dataSchema, AccoundData, nameAccount.data)
+        const cash_back = accountInfo['cash_back'];
+        console.log('cash_back:', bs58.encode(cash_back));
+    } catch (error) {
+        console.log("cash_back not init")
+    }
+    console.log("====================")
+
+
+    const tx = await program.rpc.setfee(
+        _cash_back_bump,
         {
             accounts: {
                 oneAdmin: cha.publicKey,
-                devFront: new PublicKey("7eSvqcNvVkTJCJZn4Tf27D7NKj5a2En6tGY4HkiRHbxT"),
-                devBack:  new PublicKey(secret.CHAT_PUBLIC_KEY),
-                cachebackPda: _cache_back,
-                cachebackAccount: new PublicKey("GXZJ4BvQzK7JcsEaWzNSVYeLmpZiNB1Kco59uLsDjq8X"), //cache back publickey
-                vaultAuthority: _vault_authority_pda,
+                cashbackPda: _cash_back,
+                cashbackAccount: new PublicKey("GXZJ4BvQzK7JcsEaWzNSVYeLmpZiNB1Kco59uLsDjq8X"), //cash back publickey
                 systemProgram: anchor.web3.SystemProgram.programId,
             },
             signers: [cha],
@@ -65,5 +93,15 @@ import { serialize, deserialize, deserializeUnchecked } from 'borsh';
     );
     console.log("transaction: ", tx);
 
+    nameAccount = await connection.getAccountInfo(_cash_back);
+
+    try {
+        let accountInfo = deserializeUnchecked(dataSchema, AccoundData, nameAccount.data)
+        const cash_back = accountInfo['cash_back'];
+        console.log('cash_back:', bs58.encode(cash_back));
+    } catch (error) {
+        console.log("cash_back not init")
+    }
+    console.log("====================")
 
 })();

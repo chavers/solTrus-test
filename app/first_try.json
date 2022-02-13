@@ -201,12 +201,12 @@
           "isSigner": false
         },
         {
-          "name": "cachebackPda",
+          "name": "cashbackPda",
           "isMut": true,
           "isSigner": false
         },
         {
-          "name": "cachebackAccount",
+          "name": "cashbackAccount",
           "isMut": true,
           "isSigner": false
         },
@@ -232,12 +232,12 @@
           "isSigner": true
         },
         {
-          "name": "cachebackPda",
+          "name": "cashbackPda",
           "isMut": true,
           "isSigner": false
         },
         {
-          "name": "cachebackAccount",
+          "name": "cashbackAccount",
           "isMut": false,
           "isSigner": false
         },
@@ -249,7 +249,7 @@
       ],
       "args": [
         {
-          "name": "cachebackBump",
+          "name": "cashbackBump",
           "type": "u8"
         }
       ]
@@ -290,14 +290,11 @@
         "kind": "struct",
         "fields": [
           {
-            "name": "cacheBack",
+            "name": "cashBack",
             "type": "publicKey"
           }
         ]
       }
     }
-  ],
-  "metadata": {
-    "address": "4cibLYTAbAxpszLU173SAi69x3yo55fy4pn3jxvnTvv4"
-  }
+  ]
 }

@@ -201,12 +201,12 @@ export type FirstTry = {
           "isSigner": false
         },
         {
-          "name": "cachebackPda",
+          "name": "cashbackPda",
           "isMut": true,
           "isSigner": false
         },
         {
-          "name": "cachebackAccount",
+          "name": "cashbackAccount",
           "isMut": true,
           "isSigner": false
         },
@@ -232,12 +232,12 @@ export type FirstTry = {
           "isSigner": true
         },
         {
-          "name": "cachebackPda",
+          "name": "cashbackPda",
           "isMut": true,
           "isSigner": false
         },
         {
-          "name": "cachebackAccount",
+          "name": "cashbackAccount",
           "isMut": false,
           "isSigner": false
         },
@@ -249,7 +249,7 @@ export type FirstTry = {
       ],
       "args": [
         {
-          "name": "cachebackBump",
+          "name": "cashbackBump",
           "type": "u8"
         }
       ]
@@ -290,7 +290,7 @@ export type FirstTry = {
         "kind": "struct",
         "fields": [
           {
-            "name": "cacheBack",
+            "name": "cashBack",
             "type": "publicKey"
           }
         ]
@@ -502,12 +502,12 @@ export const IDL: FirstTry = {
           "isSigner": false
         },
         {
-          "name": "cachebackPda",
+          "name": "cashbackPda",
           "isMut": true,
           "isSigner": false
         },
         {
-          "name": "cachebackAccount",
+          "name": "cashbackAccount",
           "isMut": true,
           "isSigner": false
         },
@@ -533,12 +533,12 @@ export const IDL: FirstTry = {
           "isSigner": true
         },
         {
-          "name": "cachebackPda",
+          "name": "cashbackPda",
           "isMut": true,
           "isSigner": false
         },
         {
-          "name": "cachebackAccount",
+          "name": "cashbackAccount",
           "isMut": false,
           "isSigner": false
         },
@@ -550,7 +550,7 @@ export const IDL: FirstTry = {
       ],
       "args": [
         {
-          "name": "cachebackBump",
+          "name": "cashbackBump",
           "type": "u8"
         }
       ]
@@ -591,7 +591,7 @@ export const IDL: FirstTry = {
         "kind": "struct",
         "fields": [
           {
-            "name": "cacheBack",
+            "name": "cashBack",
             "type": "publicKey"
           }
         ]

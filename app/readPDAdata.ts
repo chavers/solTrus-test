@@ -25,7 +25,7 @@ import { web3 } from "@project-serum/anchor";
 
     const connection = new Connection(clusterApiUrl("devnet"), "confirmed");
 
-    const nft_mint = new PublicKey("Bj1mAV6AYFn2t62hJQfhdmxT7N8MyNEn1YyoPJcgpGwu");
+    const nft_mint = new PublicKey("ASKyR2Z2PQpZApcUoKMM6FBUY5t1a6ponfwbagDsP9Re");
 
     const programId = new PublicKey("4cibLYTAbAxpszLU173SAi69x3yo55fy4pn3jxvnTvv4");
     const seed = nft_mint.toString().substring(0, 30);

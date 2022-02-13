@@ -181,6 +181,78 @@ export type FirstTry = {
         }
       ],
       "args": []
+    },
+    {
+      "name": "sharefee",
+      "accounts": [
+        {
+          "name": "oneAdmin",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "devFront",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "devBack",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "cachebackPda",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "cachebackAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "vaultAuthority",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "setfee",
+      "accounts": [
+        {
+          "name": "oneAdmin",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "cachebackPda",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "cachebackAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "cachebackBump",
+          "type": "u8"
+        }
+      ]
     }
   ],
   "accounts": [
@@ -207,6 +279,18 @@ export type FirstTry = {
           },
           {
             "name": "vaultAccount",
+            "type": "publicKey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "marketplaceFee",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "cacheBack",
             "type": "publicKey"
           }
         ]
@@ -398,6 +482,78 @@ export const IDL: FirstTry = {
         }
       ],
       "args": []
+    },
+    {
+      "name": "sharefee",
+      "accounts": [
+        {
+          "name": "oneAdmin",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "devFront",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "devBack",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "cachebackPda",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "cachebackAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "vaultAuthority",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "setfee",
+      "accounts": [
+        {
+          "name": "oneAdmin",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "cachebackPda",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "cachebackAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "cachebackBump",
+          "type": "u8"
+        }
+      ]
     }
   ],
   "accounts": [
@@ -424,6 +580,18 @@ export const IDL: FirstTry = {
           },
           {
             "name": "vaultAccount",
+            "type": "publicKey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "marketplaceFee",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "cacheBack",
             "type": "publicKey"
           }
         ]

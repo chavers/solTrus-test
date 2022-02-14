@@ -183,6 +183,97 @@ export type FirstTry = {
       "args": []
     },
     {
+      "name": "initandexchange",
+      "accounts": [
+        {
+          "name": "buyerAccount",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "sellerAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "mint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "buyerAta",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "vaultAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "vaultAuthority",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "fiducieAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "nftMetadata",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenMetadataProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "creatorA",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "creatorB",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "creatorC",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "creatorD",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "creatorE",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
       "name": "sharefee",
       "accounts": [
         {
@@ -452,6 +543,97 @@ export const IDL: FirstTry = {
         },
         {
           "name": "tokenMetadataProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "creatorA",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "creatorB",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "creatorC",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "creatorD",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "creatorE",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "initandexchange",
+      "accounts": [
+        {
+          "name": "buyerAccount",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "sellerAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "mint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "buyerAta",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "vaultAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "vaultAuthority",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "fiducieAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "nftMetadata",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenMetadataProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
           "isMut": false,
           "isSigner": false
         },

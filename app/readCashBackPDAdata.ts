@@ -25,15 +25,15 @@ import { web3 } from "@project-serum/anchor";
 
     const connection = new Connection(clusterApiUrl("devnet"), "confirmed");
 
-    const nft_mint = new PublicKey("Bj1mAV6AYFn2t62hJQfhdmxT7N8MyNEn1YyoPJcgpGwu");
+    const cb = new PublicKey("GXZJ4BvQzK7JcsEaWzNSVYeLmpZiNB1Kco59uLsDjq8X");
 
     const programId = new PublicKey("4cibLYTAbAxpszLU173SAi69x3yo55fy4pn3jxvnTvv4");
-    const seed = nft_mint.toString().substring(0, 30);
-    const [_fiducie_pda, _fiducie_bump] = await PublicKey.findProgramAddress(
-        [Buffer.from('d'.concat(seed))],
+    
+    const [_cash_back_pda, _cash_back_bump] = await PublicKey.findProgramAddress(
+        [cb.toBuffer() ],
         programId
     );
-    const fiducie_pda = _fiducie_pda;
+    const cash_back_pda = _cash_back_pda;
 
     class Assignable {
         constructor(properties) {
@@ -51,34 +51,24 @@ import { web3 } from "@project-serum/anchor";
                 kind: "struct",
                 fields: [
                     ["Discriminator",[8]],
-                    ["seller_key", [32]],
-                    ["seller_ata", [32]],
-                    ["nft_price", "u64"],
-                    ["nft_mint", [32]],
-                    ["vault_account", [32]],
-                    ["cashback_account", [32]],
+                    ["cashback_key", [32]],
+                    ["cashback_owner", [32]],
                 ]
             }
         ]
     ]);
 
 
-    let nameAccount = await connection.getAccountInfo(fiducie_pda);
+    let nameAccount = await connection.getAccountInfo(cash_back_pda);
     let accountInfo = deserializeUnchecked(dataSchema, AccoundData, nameAccount.data)
 
 
-    const _seller_key = accountInfo['seller_key'];
-    const _seller_ata = accountInfo['seller_ata'];
-    const _nft_price = accountInfo['nft_price'];
-    const _nft_mint = accountInfo['nft_mint'];
-    const _vault_account = accountInfo['vault_account'];
-    const _cashback_account = accountInfo['cashback_account'];
-    console.log('seller_key:', bs58.encode(_seller_key));
-    console.log('seller_ata', bs58.encode(_seller_ata));
-    console.log('nft_price',parseInt(_nft_price.toString(),10) /  LAMPORTS_PER_SOL );
-    console.log('nft_mint', bs58.encode(_nft_mint));
-    console.log('vault_account', bs58.encode(_vault_account));
-    console.log('cashback_account', bs58.encode(_cashback_account));
+    const Discriminator = accountInfo['Discriminator'];
+    const cashback_key = accountInfo['cashback_key'];
+    const cashback_owner = accountInfo['cashback_owner'];
+    console.log('Discriminator:', bs58.encode(Discriminator));
+    console.log('cashback_key:', bs58.encode(cashback_key));
+    console.log('cashback_owner', bs58.encode(cashback_owner));
     console.log("====================")
 
 })();

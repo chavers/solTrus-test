@@ -34,7 +34,7 @@ const alice = async () => {
     const TOKEN_METADATA_PROGRAM = new PublicKey('metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s');
     const nft_price = 0.5 * LAMPORTS_PER_SOL;
     console.log("programId: ", programId.toBase58());
-
+    const cb = new PublicKey("GXZJ4BvQzK7JcsEaWzNSVYeLmpZiNB1Kco59uLsDjq8X"); //cash back publickey
     console.log("alice: ", alice.publicKey.toBase58());
 
     const nft_mint = new PublicKey(secret.NFT_MINT);
@@ -78,6 +78,11 @@ const alice = async () => {
     const fiducie_bump = _fiducie_bump;
     console.log("fiducie_pda:  ", fiducie_pda.toBase58());
 
+    const [_cash_back, _cash_back_bump] = await PublicKey.findProgramAddress(
+        [cb.toBuffer()], //cashback pubkey as seed
+        programId
+    );
+
     const tx = await program.rpc.initialize(
         seed,
         vault_account_bump,
@@ -90,6 +95,8 @@ const alice = async () => {
                 sellerAta: nft_ata,
                 vaultAccount: vault_account_pda,
                 fiducieAccount: fiducie_pda,
+                cashbackPda: _cash_back,
+                cashbackAccount: cb,
                 systemProgram: anchor.web3.SystemProgram.programId,
                 rent: anchor.web3.SYSVAR_RENT_PUBKEY,
                 tokenProgram: TOKEN_PROGRAM_ID,

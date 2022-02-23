@@ -31,6 +31,16 @@ export type FirstTry = {
           "isSigner": false
         },
         {
+          "name": "cashbackPda",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "cashbackAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
           "name": "systemProgram",
           "isMut": false,
           "isSigner": false
@@ -146,103 +156,17 @@ export type FirstTry = {
         },
         {
           "name": "nftMetadata",
-          "isMut": false,
-          "isSigner": false
-        },
-        {
-          "name": "tokenMetadataProgram",
-          "isMut": false,
-          "isSigner": false
-        },
-        {
-          "name": "creatorA",
           "isMut": true,
           "isSigner": false
         },
         {
-          "name": "creatorB",
+          "name": "cashbackPda",
           "isMut": true,
           "isSigner": false
         },
         {
-          "name": "creatorC",
+          "name": "cashbackAccount",
           "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "creatorD",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "creatorE",
-          "isMut": true,
-          "isSigner": false
-        }
-      ],
-      "args": []
-    },
-    {
-      "name": "initandexchange",
-      "accounts": [
-        {
-          "name": "buyerAccount",
-          "isMut": true,
-          "isSigner": true
-        },
-        {
-          "name": "sellerAccount",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "mint",
-          "isMut": false,
-          "isSigner": false
-        },
-        {
-          "name": "buyerAta",
-          "isMut": true,
-          "isSigner": true
-        },
-        {
-          "name": "vaultAccount",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "vaultAuthority",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "fiducieAccount",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "systemProgram",
-          "isMut": false,
-          "isSigner": false
-        },
-        {
-          "name": "tokenProgram",
-          "isMut": false,
-          "isSigner": false
-        },
-        {
-          "name": "nftMetadata",
-          "isMut": false,
-          "isSigner": false
-        },
-        {
-          "name": "tokenMetadataProgram",
-          "isMut": false,
-          "isSigner": false
-        },
-        {
-          "name": "rent",
-          "isMut": false,
           "isSigner": false
         },
         {
@@ -292,16 +216,6 @@ export type FirstTry = {
           "isSigner": false
         },
         {
-          "name": "cashbackPda",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "cashbackAccount",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
           "name": "vaultAuthority",
           "isMut": true,
           "isSigner": false
@@ -315,15 +229,51 @@ export type FirstTry = {
       "args": []
     },
     {
-      "name": "setfee",
+      "name": "closeMarketplace",
       "accounts": [
         {
-          "name": "oneAdmin",
+          "name": "cashbackOwner",
           "isMut": true,
           "isSigner": true
         },
         {
           "name": "cashbackPda",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "vaultAuthority",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "cashbackAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "newMarketplace",
+      "accounts": [
+        {
+          "name": "cashbackOwner",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "cashbackPda",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "vaultAuthority",
           "isMut": true,
           "isSigner": false
         },
@@ -371,17 +321,30 @@ export type FirstTry = {
           {
             "name": "vaultAccount",
             "type": "publicKey"
+          },
+          {
+            "name": "cashbackAccount",
+            "type": "publicKey"
           }
         ]
       }
     },
     {
-      "name": "marketplaceFee",
+      "name": "cashback",
       "type": {
         "kind": "struct",
         "fields": [
           {
-            "name": "cashBack",
+            "name": "cashbackKey",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          },
+          {
+            "name": "cashbackOwner",
             "type": "publicKey"
           }
         ]
@@ -423,6 +386,16 @@ export const IDL: FirstTry = {
           "isSigner": false
         },
         {
+          "name": "cashbackPda",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "cashbackAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
           "name": "systemProgram",
           "isMut": false,
           "isSigner": false
@@ -538,103 +511,17 @@ export const IDL: FirstTry = {
         },
         {
           "name": "nftMetadata",
-          "isMut": false,
-          "isSigner": false
-        },
-        {
-          "name": "tokenMetadataProgram",
-          "isMut": false,
-          "isSigner": false
-        },
-        {
-          "name": "creatorA",
           "isMut": true,
           "isSigner": false
         },
         {
-          "name": "creatorB",
+          "name": "cashbackPda",
           "isMut": true,
           "isSigner": false
         },
         {
-          "name": "creatorC",
+          "name": "cashbackAccount",
           "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "creatorD",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "creatorE",
-          "isMut": true,
-          "isSigner": false
-        }
-      ],
-      "args": []
-    },
-    {
-      "name": "initandexchange",
-      "accounts": [
-        {
-          "name": "buyerAccount",
-          "isMut": true,
-          "isSigner": true
-        },
-        {
-          "name": "sellerAccount",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "mint",
-          "isMut": false,
-          "isSigner": false
-        },
-        {
-          "name": "buyerAta",
-          "isMut": true,
-          "isSigner": true
-        },
-        {
-          "name": "vaultAccount",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "vaultAuthority",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "fiducieAccount",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "systemProgram",
-          "isMut": false,
-          "isSigner": false
-        },
-        {
-          "name": "tokenProgram",
-          "isMut": false,
-          "isSigner": false
-        },
-        {
-          "name": "nftMetadata",
-          "isMut": false,
-          "isSigner": false
-        },
-        {
-          "name": "tokenMetadataProgram",
-          "isMut": false,
-          "isSigner": false
-        },
-        {
-          "name": "rent",
-          "isMut": false,
           "isSigner": false
         },
         {
@@ -684,16 +571,6 @@ export const IDL: FirstTry = {
           "isSigner": false
         },
         {
-          "name": "cashbackPda",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "cashbackAccount",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
           "name": "vaultAuthority",
           "isMut": true,
           "isSigner": false
@@ -707,15 +584,51 @@ export const IDL: FirstTry = {
       "args": []
     },
     {
-      "name": "setfee",
+      "name": "closeMarketplace",
       "accounts": [
         {
-          "name": "oneAdmin",
+          "name": "cashbackOwner",
           "isMut": true,
           "isSigner": true
         },
         {
           "name": "cashbackPda",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "vaultAuthority",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "cashbackAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "newMarketplace",
+      "accounts": [
+        {
+          "name": "cashbackOwner",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "cashbackPda",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "vaultAuthority",
           "isMut": true,
           "isSigner": false
         },
@@ -763,17 +676,30 @@ export const IDL: FirstTry = {
           {
             "name": "vaultAccount",
             "type": "publicKey"
+          },
+          {
+            "name": "cashbackAccount",
+            "type": "publicKey"
           }
         ]
       }
     },
     {
-      "name": "marketplaceFee",
+      "name": "cashback",
       "type": {
         "kind": "struct",
         "fields": [
           {
-            "name": "cashBack",
+            "name": "cashbackKey",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          },
+          {
+            "name": "cashbackOwner",
             "type": "publicKey"
           }
         ]

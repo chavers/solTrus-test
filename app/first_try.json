@@ -292,6 +292,10 @@
         {
           "name": "cashbackBump",
           "type": "u8"
+        },
+        {
+          "name": "marketplaceId",
+          "type": "string"
         }
       ]
     }
@@ -346,12 +350,13 @@
           {
             "name": "cashbackOwner",
             "type": "publicKey"
+          },
+          {
+            "name": "marketplaceId",
+            "type": "string"
           }
         ]
       }
     }
-  ],
-  "metadata": {
-    "address": "4cibLYTAbAxpszLU173SAi69x3yo55fy4pn3jxvnTvv4"
-  }
+  ]
 }

@@ -53,6 +53,7 @@ import { web3 } from "@project-serum/anchor";
                     ["Discriminator",[8]],
                     ["cashback_key", [32]],
                     ["cashback_owner", [32]],
+                    ["marketplace_id", [32]],
                 ]
             }
         ]
@@ -66,9 +67,11 @@ import { web3 } from "@project-serum/anchor";
     const Discriminator = accountInfo['Discriminator'];
     const cashback_key = accountInfo['cashback_key'];
     const cashback_owner = accountInfo['cashback_owner'];
+    const marketplace_id = accountInfo['marketplace_id'];
     console.log('Discriminator:', bs58.encode(Discriminator));
     console.log('cashback_key:', bs58.encode(cashback_key));
     console.log('cashback_owner', bs58.encode(cashback_owner));
+    console.log('marketplace_id', String.fromCharCode(...marketplace_id));
     console.log("====================")
 
 })();

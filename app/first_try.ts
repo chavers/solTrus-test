@@ -292,6 +292,10 @@ export type FirstTry = {
         {
           "name": "cashbackBump",
           "type": "u8"
+        },
+        {
+          "name": "marketplaceId",
+          "type": "string"
         }
       ]
     }
@@ -346,6 +350,10 @@ export type FirstTry = {
           {
             "name": "cashbackOwner",
             "type": "publicKey"
+          },
+          {
+            "name": "marketplaceId",
+            "type": "string"
           }
         ]
       }
@@ -647,6 +655,10 @@ export const IDL: FirstTry = {
         {
           "name": "cashbackBump",
           "type": "u8"
+        },
+        {
+          "name": "marketplaceId",
+          "type": "string"
         }
       ]
     }
@@ -701,6 +713,10 @@ export const IDL: FirstTry = {
           {
             "name": "cashbackOwner",
             "type": "publicKey"
+          },
+          {
+            "name": "marketplaceId",
+            "type": "string"
           }
         ]
       }

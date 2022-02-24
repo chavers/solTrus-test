@@ -69,15 +69,17 @@ import { serialize, deserialize, deserializeUnchecked } from 'borsh';
                     ["Discriminator", [8]],
                     ["cashback_key", [32]],
                     ["cashback_owner", [32]],
+                    ["marketplace_id", [32]],
                 ]
             }
         ]
     ]);
 
-
-
+    const discordID = "889058444877918268"; 
+    
     const tx = await program.rpc.newMarketplace(
         _cash_back_bump,
+        discordID,
         {
             accounts: {
                 cashbackOwner: cha.publicKey,
@@ -101,5 +103,5 @@ import { serialize, deserialize, deserializeUnchecked } from 'borsh';
         console.log("cashback_key not init")
     }
     console.log("====================")
-
+    
 })();
